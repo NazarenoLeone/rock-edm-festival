@@ -1,0 +1,62 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.boletos {
+    padding: 5rem 0;
+    h3 {
+        text-align: center;
+        color: v.$blanco;
+        margin-bottom: 2rem;
+    }
+
+    .contenedor-boletos {
+        @include m.tablet {
+            @include m.grid(2, 5rem);
+        }
+    }
+}
+
+.pase {
+    color: black;
+
+    .nombre-pase {
+        text-align: center;
+        font-size: 2.4rem;
+        color: v.$blanco;
+    }
+
+    &-header,
+    &-footer {
+        padding: .5rem;
+        p {
+            text-align: center;
+            color: v.$blanco;
+            margin: 0;
+        }
+    }
+    .pase-header {
+        font-size: 1.6rem;
+        background-color: v.$rosa;
+        text-transform: uppercase;
+    }
+    .pase-body {
+        background-color: v.$blanco;
+
+        ul {
+            @include m.resetear-lista;
+            li,
+            :nth-child(odd) {
+                background-color: v.$blanco;
+                padding: 1rem;
+                border-bottom: 1px solid #e1e1e1; // Para hacer los renglones separadores en los pases
+            }
+        }
+    }
+    .pase-footer {
+        background-color: v.$morado;
+        p {
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+    }
+}
